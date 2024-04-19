@@ -7,7 +7,7 @@ class MovieDetailsDto {
   String? homepage;
   num? id;
   String? imdbId;
-  List<String>? originCountry;
+  List<String>? originCountryList;
   String? originalLanguage;
   String? originalTitle;
   String? overview;
@@ -35,7 +35,7 @@ class MovieDetailsDto {
     this.homepage,
     this.id,
     this.imdbId,
-    this.originCountry,
+    this.originCountryList,
     this.originalLanguage,
     this.originalTitle,
     this.overview,
@@ -71,7 +71,7 @@ class MovieDetailsDto {
     homepage = json['homepage'];
     id = json['id'];
     imdbId = json['imdb_id'];
-    originCountry = json['origin_country'] != null
+    originCountryList = json['origin_country'] != null
         ? json['origin_country'].cast<String>()
         : [];
     originalLanguage = json['original_language'];
@@ -122,7 +122,7 @@ class MovieDetailsDto {
     map['homepage'] = homepage;
     map['id'] = id;
     map['imdb_id'] = imdbId;
-    map['origin_country'] = originCountry;
+    map['origin_country'] = originCountryList;
     map['original_language'] = originalLanguage;
     map['original_title'] = originalTitle;
     map['overview'] = overview;

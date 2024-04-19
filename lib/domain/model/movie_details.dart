@@ -19,7 +19,7 @@ class MovieDetails with _$MovieDetails {
     required String homepage,
     required num id,
     required String imdbId,
-    required List<String> originCountry,
+    required List<String> originCountryList,
     required String originalLanguage,
     required String originalTitle,
     required String overview,

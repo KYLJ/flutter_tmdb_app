@@ -29,7 +29,7 @@ mixin _$MovieDetails {
   String get homepage => throw _privateConstructorUsedError;
   num get id => throw _privateConstructorUsedError;
   String get imdbId => throw _privateConstructorUsedError;
-  List<String> get originCountry => throw _privateConstructorUsedError;
+  List<String> get originCountryList => throw _privateConstructorUsedError;
   String get originalLanguage => throw _privateConstructorUsedError;
   String get originalTitle => throw _privateConstructorUsedError;
   String get overview => throw _privateConstructorUsedError;
@@ -72,7 +72,7 @@ abstract class $MovieDetailsCopyWith<$Res> {
       String homepage,
       num id,
       String imdbId,
-      List<String> originCountry,
+      List<String> originCountryList,
       String originalLanguage,
       String originalTitle,
       String overview,
@@ -115,7 +115,7 @@ class _$MovieDetailsCopyWithImpl<$Res, $Val extends MovieDetails>
     Object? homepage = null,
     Object? id = null,
     Object? imdbId = null,
-    Object? originCountry = null,
+    Object? originCountryList = null,
     Object? originalLanguage = null,
     Object? originalTitle = null,
     Object? overview = null,
@@ -167,9 +167,9 @@ class _$MovieDetailsCopyWithImpl<$Res, $Val extends MovieDetails>
           ? _value.imdbId
           : imdbId // ignore: cast_nullable_to_non_nullable
               as String,
-      originCountry: null == originCountry
-          ? _value.originCountry
-          : originCountry // ignore: cast_nullable_to_non_nullable
+      originCountryList: null == originCountryList
+          ? _value.originCountryList
+          : originCountryList // ignore: cast_nullable_to_non_nullable
               as List<String>,
       originalLanguage: null == originalLanguage
           ? _value.originalLanguage
@@ -269,7 +269,7 @@ abstract class _$$MovieDetailsImplCopyWith<$Res>
       String homepage,
       num id,
       String imdbId,
-      List<String> originCountry,
+      List<String> originCountryList,
       String originalLanguage,
       String originalTitle,
       String overview,
@@ -311,7 +311,7 @@ class __$$MovieDetailsImplCopyWithImpl<$Res>
     Object? homepage = null,
     Object? id = null,
     Object? imdbId = null,
-    Object? originCountry = null,
+    Object? originCountryList = null,
     Object? originalLanguage = null,
     Object? originalTitle = null,
     Object? overview = null,
@@ -363,9 +363,9 @@ class __$$MovieDetailsImplCopyWithImpl<$Res>
           ? _value.imdbId
           : imdbId // ignore: cast_nullable_to_non_nullable
               as String,
-      originCountry: null == originCountry
-          ? _value._originCountry
-          : originCountry // ignore: cast_nullable_to_non_nullable
+      originCountryList: null == originCountryList
+          ? _value._originCountryList
+          : originCountryList // ignore: cast_nullable_to_non_nullable
               as List<String>,
       originalLanguage: null == originalLanguage
           ? _value.originalLanguage
@@ -451,7 +451,7 @@ class _$MovieDetailsImpl implements _MovieDetails {
       required this.homepage,
       required this.id,
       required this.imdbId,
-      required final List<String> originCountry,
+      required final List<String> originCountryList,
       required this.originalLanguage,
       required this.originalTitle,
       required this.overview,
@@ -470,7 +470,7 @@ class _$MovieDetailsImpl implements _MovieDetails {
       required this.voteAverage,
       required this.voteCount})
       : _genreList = genreList,
-        _originCountry = originCountry,
+        _originCountryList = originCountryList,
         _productionCompanyList = productionCompanyList,
         _productionCountryList = productionCountryList,
         _spokenLanguageList = spokenLanguageList;
@@ -500,12 +500,13 @@ class _$MovieDetailsImpl implements _MovieDetails {
   final num id;
   @override
   final String imdbId;
-  final List<String> _originCountry;
+  final List<String> _originCountryList;
   @override
-  List<String> get originCountry {
-    if (_originCountry is EqualUnmodifiableListView) return _originCountry;
+  List<String> get originCountryList {
+    if (_originCountryList is EqualUnmodifiableListView)
+      return _originCountryList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_originCountry);
+    return EqualUnmodifiableListView(_originCountryList);
   }
 
   @override
@@ -566,7 +567,7 @@ class _$MovieDetailsImpl implements _MovieDetails {
 
   @override
   String toString() {
-    return 'MovieDetails(adult: $adult, backdropPath: $backdropPath, belongsToCollection: $belongsToCollection, budget: $budget, genreList: $genreList, homepage: $homepage, id: $id, imdbId: $imdbId, originCountry: $originCountry, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, productionCompanyList: $productionCompanyList, productionCountryList: $productionCountryList, releaseDate: $releaseDate, revenue: $revenue, runtime: $runtime, spokenLanguageList: $spokenLanguageList, status: $status, tagline: $tagline, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount)';
+    return 'MovieDetails(adult: $adult, backdropPath: $backdropPath, belongsToCollection: $belongsToCollection, budget: $budget, genreList: $genreList, homepage: $homepage, id: $id, imdbId: $imdbId, originCountryList: $originCountryList, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, productionCompanyList: $productionCompanyList, productionCountryList: $productionCountryList, releaseDate: $releaseDate, revenue: $revenue, runtime: $runtime, spokenLanguageList: $spokenLanguageList, status: $status, tagline: $tagline, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount)';
   }
 
   @override
@@ -587,7 +588,7 @@ class _$MovieDetailsImpl implements _MovieDetails {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.imdbId, imdbId) || other.imdbId == imdbId) &&
             const DeepCollectionEquality()
-                .equals(other._originCountry, _originCountry) &&
+                .equals(other._originCountryList, _originCountryList) &&
             (identical(other.originalLanguage, originalLanguage) ||
                 other.originalLanguage == originalLanguage) &&
             (identical(other.originalTitle, originalTitle) ||
@@ -630,7 +631,7 @@ class _$MovieDetailsImpl implements _MovieDetails {
         homepage,
         id,
         imdbId,
-        const DeepCollectionEquality().hash(_originCountry),
+        const DeepCollectionEquality().hash(_originCountryList),
         originalLanguage,
         originalTitle,
         overview,
@@ -674,7 +675,7 @@ abstract class _MovieDetails implements MovieDetails {
       required final String homepage,
       required final num id,
       required final String imdbId,
-      required final List<String> originCountry,
+      required final List<String> originCountryList,
       required final String originalLanguage,
       required final String originalTitle,
       required final String overview,
@@ -713,7 +714,7 @@ abstract class _MovieDetails implements MovieDetails {
   @override
   String get imdbId;
   @override
-  List<String> get originCountry;
+  List<String> get originCountryList;
   @override
   String get originalLanguage;
   @override
