@@ -12,7 +12,7 @@ class PopularDataSourceImpl implements PopularDataSource {
   final _apiKey = Platform.environment['TMBD_API_KEY']!;
 
   @override
-  Future<PopularMovieDto> getPopularMovieApi() async {
+  Future<ResultDto> getPopularMovieApi() async {
     try {
       final http.Response response =
           await http.get(Uri.parse('$_baseUrl?api_key=$_apiKey&$_queryParam'));
@@ -22,7 +22,7 @@ class PopularDataSourceImpl implements PopularDataSource {
           : throw Exception(
               'Request failed with status: ${response.statusCode}.');
 
-      return PopularMovieDto.fromJson(json);
+      return ResultDto.fromJson(json);
     } catch (error) {
       throw Exception('unknownError: $error');
     }
