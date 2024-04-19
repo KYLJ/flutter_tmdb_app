@@ -19,7 +19,7 @@ _$MovieDetailsImpl _$$MovieDetailsImplFromJson(Map<String, dynamic> json) =>
       homepage: json['homepage'] as String,
       id: json['id'] as num,
       imdbId: json['imdbId'] as String,
-      originCountry: (json['originCountry'] as List<dynamic>)
+      originCountryList: (json['originCountryList'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
       originalLanguage: json['originalLanguage'] as String,
@@ -57,7 +57,7 @@ Map<String, dynamic> _$$MovieDetailsImplToJson(_$MovieDetailsImpl instance) =>
       'homepage': instance.homepage,
       'id': instance.id,
       'imdbId': instance.imdbId,
-      'originCountry': instance.originCountry,
+      'originCountryList': instance.originCountryList,
       'originalLanguage': instance.originalLanguage,
       'originalTitle': instance.originalTitle,
       'overview': instance.overview,
