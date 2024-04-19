@@ -14,4 +14,11 @@ class BelongsToCollection with _$BelongsToCollection {
 
   factory BelongsToCollection.fromJson(Map<String, Object?> json) =>
       _$BelongsToCollectionFromJson(json);
+
+  static BelongsToCollection get defaultObject => const BelongsToCollection(
+        id: -1,
+        name: '',
+        posterPath: '',
+        backdropPath: '',
+      );
 }
