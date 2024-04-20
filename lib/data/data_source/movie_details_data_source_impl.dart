@@ -13,11 +13,12 @@ class MovieDetailDataSourceImpl implements MovieDetailsDataSource {
   @override
   Future<MovieDetailsDto> getMovieDetailsDto(String movieId) async {
     final http.Response response =
-    await http.get(Uri.parse('$_baseUri/$movieId$_queryParam$_apiKey'));
+        await http.get(Uri.parse('$_baseUri/$movieId$_queryParam$_apiKey'));
 
     final Map<String, dynamic> decodedJson = response.statusCode == 200
         ? jsonDecode(utf8.decode(response.bodyBytes))
         : throw Exception('Request failed with status: ${response.statusCode}');
 
     return MovieDetailsDto.fromJson(decodedJson);
+  }
 }
