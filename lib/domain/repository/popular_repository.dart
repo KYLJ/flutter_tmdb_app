@@ -1,5 +1,5 @@
-import '../model/popular_movie.dart';
+import '../../data/dto/popular_movie_dto.dart';
 
 abstract interface class PopularRepository {
-  Future<PopularMovie> getPopularMovie();
+  Future<PopularMovieDto> getPopularMovie();
 }
