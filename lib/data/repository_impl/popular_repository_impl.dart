@@ -11,7 +11,6 @@ class PopularRepositoryImpl implements PopularRepository {
 
   @override
   Future<PopularMovieDto> getPopularMovie() async {
-    final dto = await _popularDataSource.getPopularMovieApi();
-    return dto;
+    return await _popularDataSource.getPopularMovieApi();
   }
 }
