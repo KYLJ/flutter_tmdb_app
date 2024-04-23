@@ -3,10 +3,10 @@ import 'package:flutter_tmdb_app/data/mapper/movie_details_dto_mapper.dart';
 import 'package:flutter_tmdb_app/domain/model/movie_details.dart';
 import 'package:flutter_tmdb_app/domain/repository/movie_details_repository.dart';
 
-class MovieDetailsRepositoryImp implements MovieDetailsRepository {
+class MovieDetailsRepositoryImpl implements MovieDetailsRepository {
   final MovieDetailsDataSource _movieDetailsDataSource;
 
-  const MovieDetailsRepositoryImp({
+  const MovieDetailsRepositoryImpl({
     required MovieDetailsDataSource movieDetailsDataSource,
   }) : _movieDetailsDataSource = movieDetailsDataSource;
 
