@@ -1,14 +1,20 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tmdb_app/presentation/home/component/now_playing_movie.dart';
+import 'package:flutter_tmdb_app/presentation/home/component/popular_movie.dart';
+import 'package:flutter_tmdb_app/presentation/home/component/popular_movie_title.dart';
+
+import 'component/now_playing_movie_title.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          const SliverAppBar(
+          SliverAppBar(
             floating: true,
             backgroundColor: Colors.white54,
             leading: Icon(Icons.menu),
@@ -28,31 +34,15 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                const SizedBox(
-                  height: 25,
-                ),
-                Center(
-                  child: Container(
-                    width: 380,
-                    height: 25,
-                    child: const Text(
-                      'Now Showing',
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                        height: 1,
-                      ),
-                    ),
-                  ),
-                ),
-                SingleChildScrollView(),
-                SingleChildScrollView(),
-              ],
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 25,
             ),
           ),
+          NowPlayingMovieTitle(),
+          NowPlayingMovie(),
+          PopularMovieTitle(),
+          PopularMovie(),
         ],
       ),
     );
