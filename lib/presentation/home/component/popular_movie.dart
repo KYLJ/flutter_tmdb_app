@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tmdb_app/presentation/component/star_icon.dart';
 import 'package:flutter_tmdb_app/presentation/popular_movie/popular_movie_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -71,11 +72,7 @@ class _PopularMovieState extends State<PopularMovie> {
                         padding: const EdgeInsets.only(bottom: 6.0),
                         child: Row(
                           children: [
-                            Icon(
-                              Icons.star,
-                              color: Colors.yellow.shade700,
-                              size: 20.0,
-                            ),
+                            const StarIcon(size: 20),
                             const SizedBox(width: 8.0),
                             Text(
                               result.voteAverage != null

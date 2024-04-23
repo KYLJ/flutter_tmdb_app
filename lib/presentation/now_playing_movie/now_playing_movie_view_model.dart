@@ -13,7 +13,7 @@ class NowPlayingMovieViewModel with ChangeNotifier {
 
   List<NowPlayingMovie> _nowPlayingMovieList = [];
 
-  get nowPlayingMovieList => List.unmodifiable(_nowPlayingMovieList);
+  List<NowPlayingMovie>get nowPlayingMovieList => List.unmodifiable(_nowPlayingMovieList);
 
   void fetchNowPlayingMovieList() async {
     _nowPlayingMovieList = await _getNowPlayingMovieListUseCase.execute();

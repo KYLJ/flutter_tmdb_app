@@ -13,7 +13,7 @@ class PopularMovieTitle extends StatelessWidget {
           children: [
             const Text(
               'Popular',
-              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600),
             ),
             SizedBox(
               height: 22.0,
