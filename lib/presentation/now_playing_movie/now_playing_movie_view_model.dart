@@ -9,7 +9,9 @@ class NowPlayingMovieViewModel with ChangeNotifier {
 
   NowPlayingMovieViewModel(
       {required GetNowPlayingMovieListUseCase getNowPlayingMovieListUseCase})
-      : _getNowPlayingMovieListUseCase = getNowPlayingMovieListUseCase;
+      : _getNowPlayingMovieListUseCase = getNowPlayingMovieListUseCase {
+    fetchNowPlayingMovieList();
+  }
 
   List<NowPlayingMovie> _nowPlayingMovieList = [];
 

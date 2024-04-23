@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tmdb_app/presentation/component/star_icon.dart';
 import 'package:provider/provider.dart';
-
 import '../../now_playing_movie/now_playing_movie_view_model.dart';
 
 class NowPlayingMovie extends StatefulWidget {
@@ -12,14 +11,6 @@ class NowPlayingMovie extends StatefulWidget {
 }
 
 class _NowPlayingMovieState extends State<NowPlayingMovie> {
-  @override
-  void initState() {
-    super.initState();
-    Future.microtask(
-      () => context.read<NowPlayingMovieViewModel>().fetchNowPlayingMovieList(),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final NowPlayingMovieViewModel viewModel =
