@@ -7,8 +7,8 @@ extension MovieCreditDtoMapper on MovieCreditDto {
   MovieCredit toMovieCredit() {
     return MovieCredit(
       id: id ?? 0,
-      cast: cast?.map((e) => e.toCast()).toList() ?? [],
-      crew: crew?.map((e) => e.toCrew()).toList() ?? [],
+      castList: castDtoList?.map((e) => e.toCast()).toList() ?? [],
+      crewList: crewDtoList?.map((e) => e.toCrew()).toList() ?? [],
     );
   }
 }
