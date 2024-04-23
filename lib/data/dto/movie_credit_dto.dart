@@ -1,26 +1,26 @@
 class MovieCreditDto {
   num? id;
-  List<CastDto>? cast;
-  List<CrewDto>? crew;
+  List<CastDto>? castDtoList;
+  List<CrewDto>? crewDtoList;
 
   MovieCreditDto({
     this.id,
-    this.cast,
-    this.crew,
+    this.castDtoList,
+    this.crewDtoList,
   });
 
   MovieCreditDto.fromJson(dynamic json) {
     id = json['id'];
     if (json['cast'] != null) {
-      cast = [];
+      castDtoList = [];
       json['cast'].forEach((v) {
-        cast?.add(CastDto.fromJson(v));
+        castDtoList?.add(CastDto.fromJson(v));
       });
     }
     if (json['crew'] != null) {
-      crew = [];
+      crewDtoList = [];
       json['crew'].forEach((v) {
-        crew?.add(CrewDto.fromJson(v));
+        crewDtoList?.add(CrewDto.fromJson(v));
       });
     }
   }
@@ -28,11 +28,11 @@ class MovieCreditDto {
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['id'] = id;
-    if (cast != null) {
-      map['cast'] = cast?.map((v) => v.toJson()).toList();
+    if (castDtoList != null) {
+      map['cast'] = castDtoList?.map((v) => v.toJson()).toList();
     }
-    if (crew != null) {
-      map['crew'] = crew?.map((v) => v.toJson()).toList();
+    if (crewDtoList != null) {
+      map['crew'] = crewDtoList?.map((v) => v.toJson()).toList();
     }
     return map;
   }
