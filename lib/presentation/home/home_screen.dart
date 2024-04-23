@@ -11,6 +11,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int selectedIndex = 0;
+
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -57,6 +59,21 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(Icons.movie), label: 'movie'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.local_movies_outlined), label: 'search'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.bookmark_border), label: 'save'),
+        ],
+        currentIndex: selectedIndex,
+        selectedItemColor: Colors.indigo,
+        onTap: (int index) {
+          selectedIndex = index;
+        },
       ),
     );
   }
