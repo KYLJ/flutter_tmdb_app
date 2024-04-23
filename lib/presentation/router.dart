@@ -6,6 +6,7 @@ import 'package:flutter_tmdb_app/domain/use_case/get_now_playing_movie_list_use_
 import 'package:flutter_tmdb_app/domain/use_case/get_popular_movie_list_use_case.dart';
 import 'package:flutter_tmdb_app/presentation/home/home_screen.dart';
 import 'package:flutter_tmdb_app/presentation/now_playing_movie/now_playing_movie_view_model.dart';
+import 'package:flutter_tmdb_app/presentation/splash/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
@@ -16,6 +17,12 @@ final router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
+      builder: (context, state) {
+        return const SplashScreen();
+      },
+    ),
+    GoRoute(
+      path: '/home',
       builder: (context, state) {
         return MultiProvider(
           providers: [
@@ -30,9 +37,12 @@ final router = GoRouter(
             ),
             ChangeNotifierProvider(
               create: (_) => PopularMovieViewModel(
-                  getPopularMovieListUseCase: GetPopularMovieListUseCase(
-                      popularRepository: PopularRepositoryImpl(
-                          popularDataSource: PopularDataSourceImpl()))),
+                getPopularMovieListUseCase: GetPopularMovieListUseCase(
+                  popularRepository: PopularRepositoryImpl(
+                    popularDataSource: PopularDataSourceImpl(),
+                  ),
+                ),
+              ),
             ),
           ],
           child: const HomeScreen(),
