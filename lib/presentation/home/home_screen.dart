@@ -12,39 +12,50 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            floating: true,
-            backgroundColor: Colors.white54,
-            leading: const Icon(Icons.menu),
-            actions: const [
-              Padding(
-                padding: EdgeInsets.all(12.0),
-                child: Icon(Icons.search),
-              )
-            ],
-            title: Center(
-              child: Text(
-                'KYLJ Cinema',
-                style: GoogleFonts.merriweather(
-                  textStyle: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w600,
+      body: Stack(
+        children: <Widget>[
+          Container(
+            width: 133,
+            height: MediaQuery.of(context).size.height,
+            decoration: const BoxDecoration(
+              color: Color.fromRGBO(246, 246, 246, 0.8),
+            ),
+          ),
+          CustomScrollView(
+            slivers: <Widget>[
+              SliverAppBar(
+                floating: true,
+                backgroundColor: Colors.white54,
+                leading: const Icon(Icons.menu),
+                actions: const [
+                  Padding(
+                    padding: EdgeInsets.all(12.0),
+                    child: Icon(Icons.search),
+                  )
+                ],
+                title: Center(
+                  child: Text(
+                    'KYLJ Cinema',
+                    style: GoogleFonts.merriweather(
+                      textStyle: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
+              const SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 25,
+                ),
+              ),
+              const NowPlayingMovieTitle(),
+              const NowPlayingMovie(),
+              const PopularMovieTitle(),
+              const PopularMovie(),
+            ],
           ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 25,
-            ),
-          ),
-          const NowPlayingMovieTitle(),
-          const NowPlayingMovie(),
-          const PopularMovieTitle(),
-          const PopularMovie(),
         ],
       ),
     );
