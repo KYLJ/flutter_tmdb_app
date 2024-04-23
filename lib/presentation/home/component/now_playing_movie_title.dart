@@ -7,17 +7,20 @@ class NowPlayingMovieTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Center(
-        child: SizedBox(
-          width: 393,
-          height: 30,
-          child: Text(
-            'Now Showing',
-            style: GoogleFonts.merriweather(
-              textStyle: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
-                height: 1,
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: SizedBox(
+            height: 30,
+            child: Text(
+              'Now Showing',
+              style: GoogleFonts.merriweather(
+                textStyle: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                  height: 1,
+                ),
               ),
             ),
           ),
