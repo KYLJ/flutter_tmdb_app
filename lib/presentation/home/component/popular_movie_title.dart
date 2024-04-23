@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PopularMovieTitle extends StatelessWidget {
   const PopularMovieTitle({super.key});
@@ -11,10 +12,13 @@ class PopularMovieTitle extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              'Popular',
-              style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600),
-            ),
+            Text('Popular',
+                style: GoogleFonts.merriweather(
+                  textStyle: const TextStyle(
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                )),
             SizedBox(
               height: 22.0,
               width: 64.0,
