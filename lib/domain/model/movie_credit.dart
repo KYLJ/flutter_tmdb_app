@@ -9,8 +9,8 @@ part 'movie_credit.g.dart';
 class MovieCredit with _$MovieCredit {
   const factory MovieCredit({
     required num id,
-    required List<Cast> cast,
-    required List<Crew> crew,
+    required List<Cast> castList,
+    required List<Crew> crewList,
   }) = _MovieCredit;
 
   factory MovieCredit.fromJson(Map<String, Object?> json) =>

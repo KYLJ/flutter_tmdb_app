@@ -21,8 +21,8 @@ MovieCredit _$MovieCreditFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MovieCredit {
   num get id => throw _privateConstructorUsedError;
-  List<Cast> get cast => throw _privateConstructorUsedError;
-  List<Crew> get crew => throw _privateConstructorUsedError;
+  List<Cast> get castList => throw _privateConstructorUsedError;
+  List<Crew> get crewList => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $MovieCreditCopyWith<$Res> {
           MovieCredit value, $Res Function(MovieCredit) then) =
       _$MovieCreditCopyWithImpl<$Res, MovieCredit>;
   @useResult
-  $Res call({num id, List<Cast> cast, List<Crew> crew});
+  $Res call({num id, List<Cast> castList, List<Crew> crewList});
 }
 
 /// @nodoc
@@ -53,21 +53,21 @@ class _$MovieCreditCopyWithImpl<$Res, $Val extends MovieCredit>
   @override
   $Res call({
     Object? id = null,
-    Object? cast = null,
-    Object? crew = null,
+    Object? castList = null,
+    Object? crewList = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as num,
-      cast: null == cast
-          ? _value.cast
-          : cast // ignore: cast_nullable_to_non_nullable
+      castList: null == castList
+          ? _value.castList
+          : castList // ignore: cast_nullable_to_non_nullable
               as List<Cast>,
-      crew: null == crew
-          ? _value.crew
-          : crew // ignore: cast_nullable_to_non_nullable
+      crewList: null == crewList
+          ? _value.crewList
+          : crewList // ignore: cast_nullable_to_non_nullable
               as List<Crew>,
     ) as $Val);
   }
@@ -81,7 +81,7 @@ abstract class _$$MovieCreditImplCopyWith<$Res>
       __$$MovieCreditImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({num id, List<Cast> cast, List<Crew> crew});
+  $Res call({num id, List<Cast> castList, List<Crew> crewList});
 }
 
 /// @nodoc
@@ -96,21 +96,21 @@ class __$$MovieCreditImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? cast = null,
-    Object? crew = null,
+    Object? castList = null,
+    Object? crewList = null,
   }) {
     return _then(_$MovieCreditImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as num,
-      cast: null == cast
-          ? _value._cast
-          : cast // ignore: cast_nullable_to_non_nullable
+      castList: null == castList
+          ? _value._castList
+          : castList // ignore: cast_nullable_to_non_nullable
               as List<Cast>,
-      crew: null == crew
-          ? _value._crew
-          : crew // ignore: cast_nullable_to_non_nullable
+      crewList: null == crewList
+          ? _value._crewList
+          : crewList // ignore: cast_nullable_to_non_nullable
               as List<Crew>,
     ));
   }
@@ -121,35 +121,35 @@ class __$$MovieCreditImplCopyWithImpl<$Res>
 class _$MovieCreditImpl implements _MovieCredit {
   const _$MovieCreditImpl(
       {required this.id,
-      required final List<Cast> cast,
-      required final List<Crew> crew})
-      : _cast = cast,
-        _crew = crew;
+      required final List<Cast> castList,
+      required final List<Crew> crewList})
+      : _castList = castList,
+        _crewList = crewList;
 
   factory _$MovieCreditImpl.fromJson(Map<String, dynamic> json) =>
       _$$MovieCreditImplFromJson(json);
 
   @override
   final num id;
-  final List<Cast> _cast;
+  final List<Cast> _castList;
   @override
-  List<Cast> get cast {
-    if (_cast is EqualUnmodifiableListView) return _cast;
+  List<Cast> get castList {
+    if (_castList is EqualUnmodifiableListView) return _castList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_cast);
+    return EqualUnmodifiableListView(_castList);
   }
 
-  final List<Crew> _crew;
+  final List<Crew> _crewList;
   @override
-  List<Crew> get crew {
-    if (_crew is EqualUnmodifiableListView) return _crew;
+  List<Crew> get crewList {
+    if (_crewList is EqualUnmodifiableListView) return _crewList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_crew);
+    return EqualUnmodifiableListView(_crewList);
   }
 
   @override
   String toString() {
-    return 'MovieCredit(id: $id, cast: $cast, crew: $crew)';
+    return 'MovieCredit(id: $id, castList: $castList, crewList: $crewList)';
   }
 
   @override
@@ -158,8 +158,8 @@ class _$MovieCreditImpl implements _MovieCredit {
         (other.runtimeType == runtimeType &&
             other is _$MovieCreditImpl &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._cast, _cast) &&
-            const DeepCollectionEquality().equals(other._crew, _crew));
+            const DeepCollectionEquality().equals(other._castList, _castList) &&
+            const DeepCollectionEquality().equals(other._crewList, _crewList));
   }
 
   @JsonKey(ignore: true)
@@ -167,8 +167,8 @@ class _$MovieCreditImpl implements _MovieCredit {
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      const DeepCollectionEquality().hash(_cast),
-      const DeepCollectionEquality().hash(_crew));
+      const DeepCollectionEquality().hash(_castList),
+      const DeepCollectionEquality().hash(_crewList));
 
   @JsonKey(ignore: true)
   @override
@@ -187,8 +187,8 @@ class _$MovieCreditImpl implements _MovieCredit {
 abstract class _MovieCredit implements MovieCredit {
   const factory _MovieCredit(
       {required final num id,
-      required final List<Cast> cast,
-      required final List<Crew> crew}) = _$MovieCreditImpl;
+      required final List<Cast> castList,
+      required final List<Crew> crewList}) = _$MovieCreditImpl;
 
   factory _MovieCredit.fromJson(Map<String, dynamic> json) =
       _$MovieCreditImpl.fromJson;
@@ -196,9 +196,9 @@ abstract class _MovieCredit implements MovieCredit {
   @override
   num get id;
   @override
-  List<Cast> get cast;
+  List<Cast> get castList;
   @override
-  List<Crew> get crew;
+  List<Crew> get crewList;
   @override
   @JsonKey(ignore: true)
   _$$MovieCreditImplCopyWith<_$MovieCreditImpl> get copyWith =>
