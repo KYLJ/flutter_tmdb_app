@@ -37,6 +37,7 @@ class _PopularMovieState extends State<PopularMovie> {
                       borderRadius: BorderRadius.circular(5.0),
                       child: Image.network(
                         '$imageBaseUrl${result.posterPath}',
+                        cacheWidth: 92,
                       ),
                     ),
                   ),
