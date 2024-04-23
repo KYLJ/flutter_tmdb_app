@@ -14,12 +14,6 @@ class PopularMovie extends StatefulWidget {
 }
 
 class _PopularMovieState extends State<PopularMovie> {
-  @override
-  void initState() {
-    super.initState();
-    Future.microtask(
-        () => context.read<PopularMovieViewModel>().fetchPopularMovieList());
-  }
 
   @override
   Widget build(BuildContext context) {

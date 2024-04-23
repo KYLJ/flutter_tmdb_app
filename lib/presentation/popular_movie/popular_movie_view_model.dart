@@ -10,7 +10,9 @@ class PopularMovieViewModel with ChangeNotifier {
 
   PopularMovieViewModel({
     required GetPopularMovieListUseCase getPopularMovieListUseCase,
-  }) : _getPopularMovieListUseCase = getPopularMovieListUseCase;
+  }) : _getPopularMovieListUseCase = getPopularMovieListUseCase {
+    fetchPopularMovieList();
+  }
 
   List<ResultDto> _popularMovieList = [];
 
