@@ -1,6 +1,6 @@
 import 'package:flutter_tmdb_app/data/data_source/now_playing_movie_data_source_impl.dart';
 import 'package:flutter_tmdb_app/data/data_source/popular_movie_data_source_impl.dart';
-import 'package:flutter_tmdb_app/data/repository_impl/NowPlayingMovieRepositoryImpl.dart';
+import 'package:flutter_tmdb_app/data/repository_impl/now_playing_movie_repository_impl.dart';
 import 'package:flutter_tmdb_app/data/repository_impl/popular_repository_impl.dart';
 import 'package:flutter_tmdb_app/domain/use_case/get_now_playing_movie_list_use_case.dart';
 import 'package:flutter_tmdb_app/domain/use_case/get_popular_movie_list_use_case.dart';
